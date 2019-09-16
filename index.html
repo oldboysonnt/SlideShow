@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div style="background-color: pink;position: relative;">
+            <a class="prev" onclick="previous()"><h1>&#10094;</h1></a>
+        </div> 
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="./Images/Jisoo-1.jpg" >
+            </div>
+            <div class="mySlides">
+                <img src="./Images/Jisoo-2.jpg" >
+            </div>
+            <div class="mySlides">
+                <img src="./Images/Jisoo-3.jpg" >
+            </div>
+            <div class="mySlides">
+                <img src="./Images/Jisoo-4.jpg" >
+            </div>
+            <div class="mySlides">
+                <img src="./Images/Jisoo-5.jpg">
+            </div>
+            <div class="mySlides">
+                <img src="./Images/Jisoo-6.jpg">
+            </div>
+        </div>
+        <div style="background-color: black;position: relative;">
+            <a class="next" onclick="next()"><h1>&#10095;</h1></a>
+        </div>
+    </div>
+</body>
+<script>
+    var images = document.getElementsByClassName("mySlides");
+    var i = 0;
+    images[i].style.display = "block";
+    function next() {
+        for(let j = 0; j < images.length;j ++)
+            images[j].style.display = "none";
+        i++;
+        if(i === images.length) {
+            i = 0;
+        }
+        images[i].style.display = "block";
+    }
+    function previous() {
+        for(let j = 0; j < images.length;j ++)
+            images[j].style.display = "none"; 
+        i--;     
+        if(i === -1) {
+            i = images.length - 1;
+        }
+        images[i].style.display = "block";
+    }
+    
+</script>
+</html>
